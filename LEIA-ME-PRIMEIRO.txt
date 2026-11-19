@@ -1,0 +1,52 @@
+SOBRINHO RECORDER - PACOTE PARA GERAR A VERSAO PORTATIL
+======================================================
+
+IMPORTANTE
+Este pacote prepara uma compilacao automatica na nuvem. Ele NAO contem ainda
+um SobrinhoRecorder.exe pronto. O ambiente onde este pacote foi criado nao
+possui compilador Windows/.NET, portanto nao seria correto entregar um EXE
+nao testado.
+
+O QUE A COMPILACAO NA NUVEM VAI GERAR
+- SobrinhoRecorder.exe independente do .NET instalado no computador.
+- ffmpeg.exe na mesma pasta para gravar a tela em MP4.
+- LEIA-ME.txt com instrucoes.
+
+NAO E NECESSARIO INSTALAR VISUAL STUDIO, VS CODE OU SDK NO SEU PC.
+A compilacao sera feita nos servidores do GitHub Actions.
+
+COMO GERAR O ZIP PORTATIL (PRECISA DE INTERNET E CONTA GRATUITA NO GITHUB)
+1. Entre em https://github.com/ e crie uma conta ou faca login.
+2. Clique em New repository. Nome: SobrinhoRecorder. Marque Public ou Private.
+3. Envie TODOS os arquivos e pastas deste pacote para o repositorio, mantendo
+   a estrutura: a pasta .github e a pasta SobrinhoRecorder.
+   DICA: no GitHub, use Add file > Upload files e arraste os arquivos/pastas.
+4. Clique em Commit changes.
+5. Abra a aba Actions do repositorio.
+6. Se aparecer a confirmacao para habilitar Actions, confirme.
+7. Abra o fluxo "Compilar Sobrinho Recorder para Windows" e clique em
+   Run workflow > Run workflow.
+8. Aguarde a tarefa ficar verde. Abra a execucao concluida.
+9. Na parte Artifacts, baixe SobrinhoRecorder_Portatil_Windows_x64.
+10. Extraia o ZIP e execute SobrinhoRecorder.exe.
+
+REQUISITOS DO PC DE DESTINO
+- Windows 10 64 bits.
+- Internet somente para baixar o pacote; depois o programa e o FFmpeg ficam
+  na pasta extraida.
+
+ESTADO FUNCIONAL DA VERSAO DE TESTE
+- Captura da tela inteira em MP4 usando FFmpeg.
+- Cronometro.
+- Mini painel flutuante de 120 x 50 pixels.
+- Botoes Salvar, Pausar/Continuar, Stop e Restaurar.
+- O botao Salvar finaliza e grava o MP4 imediatamente.
+- As barrinhas do medidor ainda sao animacao demonstrativa: nao capturam voz.
+- Microfone, audio do PC, webcam, selecao de janela/regiao e 4K ainda nao estao
+  implementados.
+
+OBSERVACAO SOBRE O FFmpeg
+O pacote usa o build Essentials para Windows disponibilizado por gyan.dev.
+Consulte a pagina do projeto FFmpeg e os termos/licencas do build distribuido:
+https://ffmpeg.org/download.html
+https://www.gyan.dev/ffmpeg/builds/
